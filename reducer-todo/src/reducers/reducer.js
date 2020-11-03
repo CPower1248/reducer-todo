@@ -1,3 +1,5 @@
+import { SET_NEW_TODO } from "../actions/action"
+
 export let initialState = {
     tasks: [
         {
@@ -10,6 +12,9 @@ export let initialState = {
 
 export const reducer = (state, action) => {
     switch(action.type) {
+        case(SET_NEW_TODO):
+            const newToDo = {...state, item: action.payload}
+            return newToDo
         default:
             return state
     }
